@@ -1,0 +1,13 @@
+body {
+    background-image: url("../images/bk.jpg");
+}
+
+h1 {
+    font-family: 'Inconsolata', monospace;
+    color: darkblue;
+}
+
+.jumbotron {
+    height: 400px;
+    background-color: khaki;
+}
