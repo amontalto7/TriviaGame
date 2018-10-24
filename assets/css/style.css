@@ -9,5 +9,11 @@ h1 {
 
 .jumbotron {
     height: 400px;
+    /* display: grid; */
     background-color: khaki;
+    justify-content: center;
+}
+
+.btn {
+    background-color: lightgray;
 }
