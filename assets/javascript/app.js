@@ -74,6 +74,7 @@ function displayQuestion() {
     d.addClass("answers");
 
     //  append everything to questionDiv
+    questionDiv.empty();
     questionDiv.append(question);
     questionDiv.append("<hr>");
     questionDiv.append(a, b, c, d);
@@ -84,8 +85,9 @@ function displayQuestion() {
 }
 
 function stopGame(){
-    clearInterval(nextQuestion);
-
+    clearInterval(qTimer);
+    $(".triviaContent").empty();
+    $(".triviaContent").append("<h2>").text("Game Over!");
 }
 
 function nextQuestion(){
@@ -126,16 +128,17 @@ function nextQuestion(){
 
 $(document).ready(function(){
 
-    var start = function gamestart(){
+
+    var start = function gamestart() {
         $(this).hide();
         console.log(triviaQuestions);
-        // displayQuestion();
-        qTimer = setInterval(nextQuestion,5000);
+        nextQuestion(); // call function immedietly before setting interval
+        qTimer = setInterval(nextQuestion,50000);
+        // setTimeout(nextQuestion,2000);
     }
 
     
     $(".startbtn").on("click", start);
-
 
 })
 

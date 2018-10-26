@@ -29,3 +29,17 @@ div {
     height: 50px;
     /* background-color: lemonchiffon; */
 }
+
+.answers {
+    margin-left: 20%;
+    margin-right: 20%;
+    user-select: none; 
+}
+
+.answers:hover {
+    background-color:lightseagreen;
+}
+
+.answers:active {
+    background-color: grey;
+}
