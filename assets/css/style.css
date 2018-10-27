@@ -27,6 +27,7 @@ div {
 
 .timer {
     height: 50px;
+    text-shadow: 0 0 3px #FF0000;
     /* background-color: lemonchiffon; */
 }
 
@@ -38,8 +39,14 @@ div {
 
 .answer:hover {
     background-color:lightseagreen;
+    border: solid 1px darkred;
 }
 
 .answer:active {
     background-color: grey;
+    border: solid 1px darkred;
+}
+
+#gif {
+    width: 40%;
 }
