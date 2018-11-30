@@ -1,4 +1,4 @@
-# TriviaGame
+# Trivia Game
 ### Columbia Engineering Full Stack Bootcamp - HomeWork #5
 
 This is a game written with **jQuery**, **Javascript**, **HTML** and **CSS**.
