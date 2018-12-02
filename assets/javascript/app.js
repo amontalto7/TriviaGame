@@ -77,7 +77,7 @@ const triviaQuestions = [
     answers: {
       a: "Pandora",
       b: "Siri",
-      c: "Cortana",
+      c: "Alexa",
       d: "OK Google"
     },
 
