@@ -1,7 +1,7 @@
-var questionIndex = 0;
-var correct = 0;
-var incorrect = 0;
-var counter;
+let questionIndex = 0;
+let correct = 0;
+let incorrect = 0;
+let counter;
 
 const triviaQuestions = [
   {
@@ -140,7 +140,7 @@ const triviaQuestions = [
   }
 ];
 
-var countdownTimer = {
+let countdownTimer = {
   time: 30,
   reset: function() {
     this.time = 30;
@@ -166,23 +166,23 @@ var countdownTimer = {
 };
 
 function displayQuestion() {
-  console.log(questionIndex);
+  // console.log(questionIndex);
   countdownTimer.reset();
   countdownTimer.start();
   // clear the contents of the triviaContent div
   $(".triviaContent").empty();
   $(".timer").empty();
   // create a div to store each Question and answer slide
-  var questionDiv = $("<div>").addClass("question");
+  let questionDiv = $("<div>").addClass("question");
   // create an h3 tag to store the individual question
-  var question = $("<h3>").text(triviaQuestions[questionIndex].question);
+  let question = $("<h3>").text(triviaQuestions[questionIndex].question);
   // create a div to store the answer choices
-  var answers = $("<div>");
+  let answers = $("<div>");
   // create p tags to store individual answers
-  var a = $("<h4>").text(triviaQuestions[questionIndex].answers.a);
-  var b = $("<h4>").text(triviaQuestions[questionIndex].answers.b);
-  var c = $("<h4>").text(triviaQuestions[questionIndex].answers.c);
-  var d = $("<h4>").text(triviaQuestions[questionIndex].answers.d);
+  let a = $("<h4>").text(triviaQuestions[questionIndex].answers.a);
+  let b = $("<h4>").text(triviaQuestions[questionIndex].answers.b);
+  let c = $("<h4>").text(triviaQuestions[questionIndex].answers.c);
+  let d = $("<h4>").text(triviaQuestions[questionIndex].answers.d);
   a.attr("data-choice", "a");
   b.attr("data-choice", "b");
   c.attr("data-choice", "c");
@@ -214,8 +214,8 @@ function answerRight() {
 function showCorrectAnswer(x) {
   $(".triviaContent").empty();
   $(".timer").hide();
-  var rightwrong = $("<h2>");
-  var result;
+  let rightwrong = $("<h2>");
+  let result;
   if (x) {
     result = "Right!";
     $(".triviaContent").append(
@@ -238,26 +238,26 @@ function showCorrectAnswer(x) {
   rightwrong.text(result);
   $(".triviaContent").append(rightwrong);
 
-  var gif = $("<img>");
+  let gif = $("<img>");
   gif.attr("src", triviaQuestions[questionIndex].pic);
   gif.attr("id", "gif");
   $(".triviaContent").append(gif);
 
   // show next question after 5 seconds
-  var delay = setTimeout(nextQuestion, 4000);
+  let delay = setTimeout(nextQuestion, 4000);
 }
 
 function showScore() {
   countdownTimer.stop();
   $(".timer").hide();
   $(".triviaContent").empty();
-  var displayCorrect = $("<h4>").text("Correct: " + correct);
-  var displayIncorrect = $("<h4>").text("Wrong: " + incorrect);
+  let displayCorrect = $("<h4>").text("Correct: " + correct);
+  let displayIncorrect = $("<h4>").text("Wrong: " + incorrect);
   $(".triviaContent").append($("<h2>").text("Game Over"));
   $(".triviaContent").append(displayCorrect, displayIncorrect);
 
   // create button to restart
-  var btnRestart = $("<button>");
+  let btnRestart = $("<button>");
   btnRestart.text("Restart Game");
   btnRestart.attr("id", "restart");
   btnRestart.addClass("btn btn-outline-primary");
@@ -282,9 +282,9 @@ function nextQuestion() {
 }
 
 $(document).ready(function() {
-  var start = function gamestart() {
+  let start = function gamestart() {
     $(this).hide();
-    console.log(triviaQuestions);
+    // console.log(triviaQuestions);
     countdownTimer.reset();
     $(".timer").show();
     displayQuestion();
@@ -293,7 +293,7 @@ $(document).ready(function() {
   // register click events on generated questions
   $(document).on("mouseup", ".answer", function() {
     countdownTimer.stop();
-    var guess = $(this).attr("data-choice");
+    let guess = $(this).attr("data-choice");
     if (guess == triviaQuestions[questionIndex].correctAnswer) {
       // console.log("CORRECT!: " + guess);
       // console.log("Correct answer: "+triviaQuestions[questionIndex].correctAnswer);
